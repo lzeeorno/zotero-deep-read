@@ -1,0 +1,4 @@
+interface:
+  display_name: "Zotero Deep Read"
+  short_description: "论文全文精读：全局编号、红色语义框、中文关键词与详细教学式批注"
+  default_prompt: "使用 $zotero-deep-read 精读这篇论文，按 v3 编号规范生成 Zotero 可查看的完整批注 PDF。"
