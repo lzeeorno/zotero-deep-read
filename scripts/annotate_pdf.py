@@ -41,8 +41,6 @@ def annotate(source, notes_path, output, font=None, preview_dir=None):
             if badge.y1 > box.y0 or not (abs(badge.x0-box.x0) <= 12 or abs(badge.x1-box.x1) <= 12):
                 raise ValueError(f'{note_id}: badge must be outside the upper left/right corner.')
             for r in (badge, label):
-                if any(overlaps(r, fitz.Rect(w[:4])) for w in page.get_text('words')):
-                    raise ValueError(f'{note_id}: badge/label overlaps page text; select empty space.')
                 if any(overlaps(r, other) for other in placements.get(page_number, [])):
                     raise ValueError(f'{note_id}: badge/label overlaps another note placement.')
             if overlaps(badge, label):
